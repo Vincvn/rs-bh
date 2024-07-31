@@ -13,7 +13,7 @@ pub fn string(input: &str)->anyhow::Result<String> {
     Ok(contents)
 }
 pub fn lines(input: &str)->anyhow::Result<Vec<String>> {
-    Ok(string(&input)?.lines().into_iter().map(|s|s.to_string()).collect::<Vec<String>>())
+    Ok(string(&input)?.lines().into_iter().filter(|s| !s.is_empty()).map(|s|s.to_string()).collect::<Vec<String>>())
 }
 
 pub fn json<T>(input: &str)->anyhow::Result<T> 

@@ -12,7 +12,7 @@ pub async fn string(input: &str)->Result<String> {
     Ok(contents)
 }
 pub async fn lines(input: &str)->Result<Vec<String>> {
-    Ok(string(&input).await?.lines().into_iter().map(|s|s.to_string()).collect::<Vec<String>>())
+    Ok(string(&input).await?.lines().into_iter().filter(|s| !s.is_empty()).map(|s|s.to_string()).collect::<Vec<String>>())
 }
 
 pub async fn json<T>(input: &str)->Result<T> 

@@ -1,5 +1,5 @@
 use std::fs::File;
-use std::io::Result;
+use anyhow::Result;
 
 use serde::de::DeserializeOwned;
 pub fn bytes(input: &str) -> Result<Vec<u8>> {
@@ -21,8 +21,5 @@ where
     T: DeserializeOwned
 {
     let json_string = string(&input)?;
-    match serde_json::from_str::<T>(&json_string){
-        Ok(json) => Ok(json),
-        Err(e)=>Err(anyhow::anyhow!(e))
-    }
+    Ok(serde_json::from_str::<T>(&json_string)?)
 }

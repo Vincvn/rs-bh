@@ -6,3 +6,4 @@ pub mod number;
 pub mod hash;
 pub mod hashset;
 pub mod regex;
+pub mod dialog;

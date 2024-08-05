@@ -4,3 +4,4 @@ pub mod string;
 pub mod uuid;
 pub mod number;
 pub mod hash;
+pub mod hashset;

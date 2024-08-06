@@ -7,3 +7,4 @@ pub mod hash;
 pub mod hashset;
 pub mod regex;
 pub mod dialog;
+pub mod vec;

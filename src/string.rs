@@ -12,5 +12,5 @@ pub fn split_to<T: std::str::FromStr, P: AsRef<str>>(data: &str, index: usize, p
 }
 
 pub fn to_vec<P: AsRef<str>>(data: &str, pat: P) -> Vec<String> {
-    data.split(pat.as_ref()).collect::<Vec<&str>>().into_iter().map(|s| s.to_string()).collect::<Vec<String>>()
+    data.split(pat.as_ref()).collect::<Vec<&str>>().into_iter().filter(|s|!s.is_empty()).map(|s| s.to_string()).collect::<Vec<String>>()
 }

@@ -1,3 +1,5 @@
+use std::collections::HashSet;
+
 use serde::Serialize;
 use rand::seq::SliceRandom;
 
@@ -51,4 +53,11 @@ where
         remove_by_value(d, &f);
     });
     taken
+}
+
+pub fn hashset<T>(vec: Vec<T>) -> HashSet<T>
+where
+    T: std::hash::Hash + Eq,
+{
+    vec.into_iter().collect()
 }

@@ -61,3 +61,11 @@ where
 {
     vec.into_iter().collect()
 }
+
+pub fn merge<T>(source: &mut Vec<T>, merge: Vec<T>) -> Vec<T>
+where
+    T: Clone
+{
+    source.extend(merge);
+    source.to_owned()
+}

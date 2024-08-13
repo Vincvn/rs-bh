@@ -9,3 +9,5 @@ pub mod regex;
 pub mod dialog;
 pub mod vec;
 pub mod dir;
+pub mod process;
+pub mod path;
